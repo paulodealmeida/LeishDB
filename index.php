@@ -1,0 +1,1 @@
+<?php$_SESSION["dir"] = dirname(__FILE__);if ($_REQUEST["p"] == ""){    $_REQUEST["p"] = "leishdb.php";}include (dirname(__FILE__). "/view/" . $_REQUEST["p"]);
