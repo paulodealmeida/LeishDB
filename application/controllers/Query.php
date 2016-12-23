@@ -25,7 +25,7 @@ class query extends CI_Controller {
 			if(count($this->session->userdata('genes'))>0 or count($this->session->userdata('ncrna'))>0){
 				$this->load->view('search');
 			}else{
-				echo ("<script>alert('We not fount registers relationed the your search. Try again !');</script>");
+				echo ("<script>window.alert('We not fount registers relationed the your search. Try again !');</script>");
 				redirect("welcome");
 			}
 		} catch (Exception $e) {
@@ -58,10 +58,10 @@ class query extends CI_Controller {
 				$this->session->set_userdata("ncrna", $this->Ncrna_model->selectByType($ncrnatype));
 			}
 
-			if(count($this->session->userdata('genes'))>0 or count($this->session->userdata('ncrnas'))>0){
+			if(count($this->session->userdata('genes'))>0 or count($this->session->userdata('ncrna'))>0){
 				$this->load->view('search');
 			}else{
-				echo ("<script>alert('We not fount registers relationed the your search. Try again !');</script>");
+				echo ("<script>window.alert('We not fount registers relationed the your search. Try again !');</script>");
 				redirect("welcome");
 			}
 		} catch (Exception $e) {
