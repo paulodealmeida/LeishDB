@@ -51,6 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'welcome';
 $route['query'] = 'query/search';
+$route['actadvsearch'] = 'query/actadvsearch';
 $route['export'] = 'export';
 $route['fasta'] = 'export/fasta';
 $route['data'] = 'query/data';

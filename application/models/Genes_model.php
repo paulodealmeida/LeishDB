@@ -35,10 +35,11 @@ class Genes_model extends CI_Model
         return $query->result_array();
     }
 
-    public function selectGenesByCoordinates($chromossomeid, $start, $end)
+    public function selectGenesByCoordinates($chromosomeid, $start, $end)
     {
-        $sql = "select g.*, p.* from genes as g left join proteins as p" .
-            " on (g.proteinid = p.id) where  g.id = {$this->db->escape_like_str($id)} ";
+        $sql = "select g.*,p.entryname, p.proteinname, p.genename, p.organism, p.proteinfamily from genes as g left join 
+        proteins as p on (g.proteinid = p.id) where g.chromosomeid = {$this->db->escape_like_str($chromosomeid)}" . ($start > 0 or
+        $end >0 ? " AND (g.start >= {$this->db->escape_like_str($start)} AND g.end <= {$this->db->escape_like_str($end)})" : "") ;
         $query = $this->db->query($sql);
         return $query->result_array();
     }

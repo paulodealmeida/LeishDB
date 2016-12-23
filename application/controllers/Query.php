@@ -34,6 +34,42 @@ class query extends CI_Controller {
 
 	}
 
+	public function actadvsearch()
+	{
+		try {
+
+			$this->load->library('session');
+			$this->load->helper('url');
+			$this->load->model('Genes_model');
+			$this->load->model('Ncrna_model');
+
+			$option = $this->input->post("advoption");
+
+			if ($option == 1){
+				$chromosome = $this->input->post("genomeid");
+				$start = $this->input->post("start");
+				$end = $this->input->post("end");
+
+				$this->session->set_userdata("genes", $this->Genes_model->selectGenesByCoordinates($chromosome, $start, $end));
+				$this->session->set_userdata("ncrna", $this->Ncrna_model->selectByCoordinates($chromosome, $start, $end));
+			}else if ($option == 2){
+				$ncrnatype = $this->input->post("ncrnatype");
+				$this->session->set_userdata("genes", array());
+				$this->session->set_userdata("ncrna", $this->Ncrna_model->selectByType($ncrnatype));
+			}
+
+			if(count($this->session->userdata('genes'))>0 or count($this->session->userdata('ncrnas'))>0){
+				$this->load->view('search');
+			}else{
+				echo ("<script>alert('We not fount registers relationed the your search. Try again !');</script>");
+				redirect("welcome");
+			}
+		} catch (Exception $e) {
+			$this->load->library('session');
+		}
+
+	}
+	
 	public function data()
 	{
 		$this->load->library('session');
