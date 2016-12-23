@@ -12,14 +12,8 @@
       <paths name="LeishDB">
         <serverdata>
           <mappings>
-            <mapping deploy="/public_html" local="$PROJECT_DIR$" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
-          <excludedPaths>
-            <excludedPath path="/public_html/community" />
-            <excludedPath path="/public_html/snps" />
-            <excludedPath path="/public_html/downloads" />
-            <excludedPath path="/public_html/leishdb1.0.zip" />
-          </excludedPaths>
         </serverdata>
       </paths>
       <paths name="Teleradio">

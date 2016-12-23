@@ -1,0 +1,17 @@
+#map-container { height: 400px; border: 0px solid grey }
+
+.but {
+    display: inline-block;
+    background-color: #ccc;
+    color: #444;
+    padding: 10px 20px;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    border: 0px;
+}
+.but-error {
+    color: #fff;
+    background-color: #CC0000;
+}

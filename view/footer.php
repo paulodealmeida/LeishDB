@@ -1,1 +1,0 @@
-<!-- ******FOOTER****** --><footer class="footer">    <div class="container text-center">        <small class="copyright">Torres, FG et al. 2016 - This data is public and this source is open too.</small>    </div><!--//container--></footer><!--//footer-->
