@@ -33,6 +33,14 @@ class Chromosomes_model extends CI_Model
         return $query->result_array();
     }
 
+    public function selectByOrganismID($id)
+    {
+        $this->db->where('organismid', $id);
+        $this->db->order_by('number', "asc");
+        $query = $this->db->get('chromosomes');
+        return $query->result_array();
+    }
+    
     public function getSequence($chromosomeid, $start, $end)
     {
         $sql = "SELECT SUBSTRING(chromosomes.sequence FROM {$this->db->escape_like_str($start)} FOR 
