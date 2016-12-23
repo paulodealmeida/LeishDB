@@ -55,5 +55,7 @@ $route['actadvsearch'] = 'query/actadvsearch';
 $route['export'] = 'export';
 $route['fasta'] = 'export/fasta';
 $route['data'] = 'query/data';
+$route['blast'] = 'tools/BLAST';
+$route['browser'] = 'tools/browser';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

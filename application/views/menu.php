@@ -34,9 +34,8 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false">Tools <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="http://regadb.bahia.fiocruz.br:4567" target="_blank">BLAST</a></li>
-                            <li><a href="http://regadb.bahia.fiocruz.br/jbrowse/index.html"
-                                   target="_blank">Genome browser</a></li>
+                            <li><a href="<?= base_url("blast")?>" >BLAST</a></li>
+                            <li><a href="<?= base_url("browser")?>" >Genome browser</a></li>
                         </ul>
                     </li>
                 </ul><!--//nav-->
