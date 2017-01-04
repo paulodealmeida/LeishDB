@@ -57,4 +57,18 @@ class Genes_model extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+
+    public function countGeneswithfunctions()
+    {
+        $sql = "select count(*) as count from genes where proteinid <> '' ";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function countORFs()
+    {
+        $sql = "select count(*) as count from genes ";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 }

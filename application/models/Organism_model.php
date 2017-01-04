@@ -33,4 +33,11 @@ class Organism_model extends CI_Model
         return $query->result_array();
     }
 
+    public function countOrganisms()
+    {
+        $sql = "select count(*) as count from organisms";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
 }

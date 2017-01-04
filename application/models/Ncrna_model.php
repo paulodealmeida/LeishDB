@@ -58,4 +58,10 @@ class Ncrna_model extends CI_Model
         return $query->result_array();
     }
 
+    public function countncRNA()
+    {
+        $sql = "select count(*) as count from ncrna";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 }

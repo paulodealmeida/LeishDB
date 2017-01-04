@@ -3,25 +3,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class welcome extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index()
 	{
 		$this->load->model('Organism_model');
+		$this->load->model('Genes_model');
+		$this->load->model('Ncrna_model');
+
 		$dados["organisms"] = $this->Organism_model->selectAll();
+
+		//Statistics rates
+		$dados["count_orfs"] = $this->Genes_model->countORFs();
+		$dados["count_organisms"] = $this->Organism_model->countOrganisms();
+		$dados["count_genes"] = $this->Genes_model->countGeneswithfunctions();
+		$dados["count_ncrna"] = $this->Ncrna_model->countncRNA();
 		$this->load->view('leishdb',$dados);
 	}
 }
