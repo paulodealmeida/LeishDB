@@ -38,6 +38,12 @@
                             <li><a href="<?= base_url("browser")?>" >Genome browser</a></li>
                         </ul>
                     </li>
+                    <form class="navbar-form navbar-left"  method="post" action="<?= base_url("query/actsearch")?>">
+                        <div class="form-group">
+                            <input type="text"  required="required" name="term" id="term" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Search</button>
+                    </form>
                 </ul><!--//nav-->
             </div><!--//navabr-collapse-->
         </nav><!--//main-nav-->

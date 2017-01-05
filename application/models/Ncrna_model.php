@@ -22,8 +22,9 @@ class Ncrna_model extends CI_Model
 
     public function selectAll()
     {
-        $query = $this->db->get('ncrna');
-        return $query;
+        $sql = "select * from ncrna as rna ";
+        $query = $this->db->query($sql);
+        return $query->result_array();
     }
 
     public function selectByID($id)

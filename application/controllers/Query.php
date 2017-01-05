@@ -45,13 +45,18 @@ class query extends CI_Controller {
 
 			$option = $this->input->post("advoption");
 
+
 			if ($option == 1){
 				$chromosome = $this->input->post("genomeid");
 				$start = $this->input->post("start");
 				$end = $this->input->post("end");
 
-				$this->session->set_userdata("genes", $this->Genes_model->selectGenesByCoordinates($chromosome, $start, $end));
-				$this->session->set_userdata("ncrna", $this->Ncrna_model->selectByCoordinates($chromosome, $start, $end));
+				if($chromosome <> ""){
+					$this->session->set_userdata("genes", $this->Genes_model->selectGenesByCoordinates($chromosome, $start, $end));
+					$this->session->set_userdata("ncrna", $this->Ncrna_model->selectByCoordinates($chromosome, $start, $end));
+				}else{
+					echo "<script> window.location.href='" . base_url() . "welcome'; alert('You need to choose the chromosome number for to apply this filter. Try again !');</script>";
+				}
 			}else if ($option == 2){
 				$ncrnatype = $this->input->post("ncrnatype");
 				$this->session->set_userdata("genes", array());
@@ -61,8 +66,7 @@ class query extends CI_Controller {
 			if(count($this->session->userdata('genes'))>0 or count($this->session->userdata('ncrna'))>0){
 				$this->load->view('search');
 			}else{
-				echo ("<script>window.alert('We not fount registers relationed the your search. Try again !');</script>");
-				redirect("welcome");
+				echo "<script> window.location.href='" . base_url() . "welcome'; alert('We not fount registers relationed the your search. Try again !');</script>";
 			}
 		} catch (Exception $e) {
 			$this->load->library('session');

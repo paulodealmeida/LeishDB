@@ -22,8 +22,11 @@ class Genes_model extends CI_Model
 
     public function selectAll()
     {
-        $query = $this->db->get('genes');
-        return $query;
+        $sql = "select g.*, p.entryname, p.proteinname, p.genename, p.organism, p.taxonomiclineage, 
+                    p.proteinfamily from genes as g left join proteins as p" . " on (g.proteinid = p.id) 
+                 ";
+        $query = $this->db->query($sql);
+        return $query->result_array();
     }
 
     public function selectByID($id)
