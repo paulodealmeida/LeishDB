@@ -74,4 +74,13 @@ class Genes_model extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+
+    public function selectDatabasesByID($id)
+    {
+        $sql = "select c.*,d.* from crossreference as c
+		left join `databases` as d on c.databaseid = d.id where  c.geneid = '{$this->db->escape_like_str($id)}'";
+        $query = $this->db->query($sql);
+
+        return $query->result_array();
+    }
 }

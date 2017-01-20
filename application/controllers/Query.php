@@ -102,6 +102,7 @@ class query extends CI_Controller {
 			$gotermsm = $this->Proteins_model->selectAllGoTermsByType($data[0]["proteinid"], "m");
 			$gotermsc = $this->Proteins_model->selectAllGoTermsByType($data[0]["proteinid"], "c");
 			$databases = $this->Proteins_model->selectDatabasesByID($data[0]["proteinid"]);
+			$annotations = $this->Genes_model->selectDatabasesByID($id);
 			$publications = $this->Proteins_model->selectPublicationsByID($data[0]["proteinid"]);
 			$start = $data[0]["start"];
 			$end = $data[0]["end"];
@@ -112,6 +113,7 @@ class query extends CI_Controller {
 			$dados["gotermsm"] = $gotermsm;
 			$dados["gotermsc"] = $gotermsc;
 			$dados["databases"] = $databases;
+			$dados["annotations"] = $annotations;
 			$dados["publications"] = $publications;
 			$dados["start"] = $start;
 			$dados["sequence"] = $sequence;
