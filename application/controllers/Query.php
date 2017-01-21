@@ -78,6 +78,7 @@ class query extends CI_Controller {
 	{
 		$this->load->library('session');
 		$this->load->helper('url');
+		//$this->load->model('Targets_model');
 		$this->load->model('Genes_model');
 		$this->load->model('Ncrna_model');
 		$this->load->model('Proteins_model');
@@ -88,36 +89,47 @@ class query extends CI_Controller {
 
 		if($type == "nc"){
 			$data = $this->Ncrna_model->selectByID($id);
-			$start = $data[0]["start"];
-			$end = $data[0]["end"];
-			$sequence = $this->Chromosomes_model->getSequence($data[0]["chromosomeid"],$start,  $end);
-			$dados["data"] = $data;
-			$dados["start"] = $start;
-			$dados["end"] = $end;
-			$dados["sequence"] = $sequence;
+			if (count($data) > 0){
+                //$targets = $this->Targets_model->selectByncRNAID($id);
+                $start = $data[0]["start"];
+                $end = $data[0]["end"];
+                $sequence = $this->Chromosomes_model->getSequence($data[0]["chromosomeid"],$start,  $end);
+                $dados["data"] = $data;
+                $dados["start"] = $start;
+                $dados["end"] = $end;
+                $dados["sequence"] = $sequence;
+                //$dados["targets"] = $targets;
+            }else{
+                echo "<script> window.location.href='" . base_url() . "welcome'; alert('We not fount registers relationed this gene. Try again !');</script>";
+            }
 		}else{
 			$data =  $this->Genes_model->selectByID($id);
-			$goterms = $this->Proteins_model->selectAllGoTermsByID($data[0]["proteinid"]);
-			$gotermsb = $this->Proteins_model->selectAllGoTermsByType($data[0]["proteinid"], "b");
-			$gotermsm = $this->Proteins_model->selectAllGoTermsByType($data[0]["proteinid"], "m");
-			$gotermsc = $this->Proteins_model->selectAllGoTermsByType($data[0]["proteinid"], "c");
-			$databases = $this->Proteins_model->selectDatabasesByID($data[0]["proteinid"]);
-			$annotations = $this->Genes_model->selectDatabasesByID($id);
-			$publications = $this->Proteins_model->selectPublicationsByID($data[0]["proteinid"]);
-			$start = $data[0]["start"];
-			$end = $data[0]["end"];
-			$sequence = $this->Chromosomes_model->getSequence($data[0]["chromosomeid"],$start,  $end);
-			$dados["data"] = $data;
-			$dados["goterms"] = $goterms;
-			$dados["gotermsb"] = $gotermsb;
-			$dados["gotermsm"] = $gotermsm;
-			$dados["gotermsc"] = $gotermsc;
-			$dados["databases"] = $databases;
-			$dados["annotations"] = $annotations;
-			$dados["publications"] = $publications;
-			$dados["start"] = $start;
-			$dados["sequence"] = $sequence;
-			$dados["end"] = $end;
+            if (count($data) > 0){
+                $goterms = $this->Proteins_model->selectAllGoTermsByID($data[0]["proteinid"]);
+                $gotermsb = $this->Proteins_model->selectAllGoTermsByType($data[0]["proteinid"], "b");
+                $gotermsm = $this->Proteins_model->selectAllGoTermsByType($data[0]["proteinid"], "m");
+                $gotermsc = $this->Proteins_model->selectAllGoTermsByType($data[0]["proteinid"], "c");
+                $databases = $this->Proteins_model->selectDatabasesByID($data[0]["proteinid"]);
+                $annotations = $this->Genes_model->selectDatabasesByID($id);
+                $publications = $this->Proteins_model->selectPublicationsByID($data[0]["proteinid"]);
+                $start = $data[0]["start"];
+                $end = $data[0]["end"];
+                $sequence = $this->Chromosomes_model->getSequence($data[0]["chromosomeid"],$start,  $end);
+                $dados["data"] = $data;
+                $dados["goterms"] = $goterms;
+                $dados["gotermsb"] = $gotermsb;
+                $dados["gotermsm"] = $gotermsm;
+                $dados["gotermsc"] = $gotermsc;
+                $dados["databases"] = $databases;
+                $dados["annotations"] = $annotations;
+                $dados["publications"] = $publications;
+                $dados["start"] = $start;
+                $dados["sequence"] = $sequence;
+                $dados["end"] = $end;
+                //$dados["targets"] = array();
+            }else{
+                echo "<script> window.location.href='" . base_url() . "welcome'; alert('We not fount registers relationed this gene. Try again !');</script>";
+            }
 		};
 
 		$dados["type"] = $type;
