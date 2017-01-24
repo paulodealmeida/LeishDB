@@ -48,7 +48,7 @@
                                     <tr>
                                         <th>LeishDB ID</th>
                                         <th>Type</th>
-                                        <th>Protein name</th>
+                                        <th>Protein / ncRNA name</th>
                                         <th>Size</th>
                                         <th>Strand</th>
                                         <th>Genomic location</th>
