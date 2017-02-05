@@ -10,69 +10,75 @@ class query extends CI_Controller {
 
 	public function actsearch()
 	{
-		try {
-			
-			$this->load->library('session');
-			$this->load->helper('url');
-			$this->load->model('Genes_model');
-			$this->load->model('Ncrna_model');
+	    session_cache_limiter(900);
+        $this->load->library('session');
+        $this->load->helper('url');
+        $this->load->model('Genes_model');
+        $this->load->model('Ncrna_model');
 
-			$term = $this->input->post("term");
-
-			$this->session->set_userdata("genes", $this->Genes_model->selectByEverything($term));
-			$this->session->set_userdata("ncrna", $this->Ncrna_model->selectByEverything($term));
-
-			if(count($this->session->userdata('genes'))>0 or count($this->session->userdata('ncrna'))>0){
-				$this->load->view('search');
-			}else{
-				echo ("<script>window.alert('We not fount registers relationed the your search. Try again !');</script>");
-				redirect("welcome");
-			}
-		} catch (Exception $e) {
-			$this->load->library('session');
-		}
-
-	}
+        if($this->input->method() === 'post'){
+            try {
+                $term = $this->input->post("term");
+                $this->session->set_userdata("genes", $this->Genes_model->selectByEverything($term));
+                $this->session->set_userdata("ncrna", $this->Ncrna_model->selectByEverything($term));
+                if(count($this->session->userdata('genes'))>0 or count($this->session->userdata('ncrna'))>0){
+                    $this->load->view('search');
+                }else{
+                    echo "<script> window.location.href='" . base_url() . "welcome'; alert('We not fount registers relationed the your search. Try again !');</script>";
+                }
+            } catch (Exception $e) {
+                $this->load->library('session');
+            }
+        } else {
+            $this->load->view('search');
+        }
+    }
 
 	public function actadvsearch()
 	{
-		try {
+        session_cache_limiter(900);
+        $this->load->library('session');
+        $this->load->helper('url');
+        $this->load->model('Genes_model');
+        $this->load->model('Ncrna_model');
 
-			$this->load->library('session');
-			$this->load->helper('url');
-			$this->load->model('Genes_model');
-			$this->load->model('Ncrna_model');
-
-			$option = $this->input->post("advoption");
-
-
-			if ($option == 1){
-				$chromosome = $this->input->post("genomeid");
-				$start = $this->input->post("start");
-				$end = $this->input->post("end");
-
-				if($chromosome <> ""){
-					$this->session->set_userdata("genes", $this->Genes_model->selectGenesByCoordinates($chromosome, $start, $end));
-					$this->session->set_userdata("ncrna", $this->Ncrna_model->selectByCoordinates($chromosome, $start, $end));
-				}else{
-					echo "<script> window.location.href='" . base_url() . "welcome'; alert('You need to choose the chromosome number for to apply this filter. Try again !');</script>";
-				}
-			}else if ($option == 2){
-				$ncrnatype = $this->input->post("ncrnatype");
-				$this->session->set_userdata("genes", array());
-				$this->session->set_userdata("ncrna", $this->Ncrna_model->selectByType($ncrnatype));
-			}
-
-			if(count($this->session->userdata('genes'))>0 or count($this->session->userdata('ncrna'))>0){
-				$this->load->view('search');
-			}else{
-				echo "<script> window.location.href='" . base_url() . "welcome'; alert('We not fount registers relationed the your search. Try again !');</script>";
-			}
-		} catch (Exception $e) {
-			$this->load->library('session');
-		}
-
-	}
+        if($this->input->method() === 'post'){
+            try {
+                if($this->input->method() <> 'post') {
+                    echo "<script> window.location.href='" . base_url() . "search';</script>";
+                }
+                $this->load->library('session');
+                $this->load->helper('url');
+                $this->load->model('Genes_model');
+                $this->load->model('Ncrna_model');
+                $option = $this->input->post("advoption");
+                if ($option == 1){
+                    $chromosome = $this->input->post("genomeid");
+                    $start = $this->input->post("start");
+                    $end = $this->input->post("end");
+                    if($chromosome <> ""){
+                        $this->session->set_userdata("genes", $this->Genes_model->selectGenesByCoordinates($chromosome, $start, $end));
+                        $this->session->set_userdata("ncrna", $this->Ncrna_model->selectByCoordinates($chromosome, $start, $end));
+                    }else{
+                        echo "<script> window.location.href='" . base_url() . "welcome'; alert('You need to choose the chromosome number for to apply this filter. Try again !');</script>";
+                    }
+                }else if ($option == 2){
+                    $ncrnatype = $this->input->post("ncrnatype");
+                    $this->session->set_userdata("genes", array());
+                    $this->session->set_userdata("ncrna", $this->Ncrna_model->selectByType($ncrnatype));
+                }
+                if(count($this->session->userdata('genes'))>0 or count($this->session->userdata('ncrna'))>0){
+                    $this->load->view('search');
+                }else{
+                    echo "<script> window.location.href='" . base_url() . "welcome'; alert('We not found registers relationed the your search. Try again !');</script>";
+                }
+            } catch (Exception $e) {
+                $this->load->library('session');
+            }
+        }else{
+            $this->load->view('search');
+        }
+    }
 	
 	public function data()
 	{
