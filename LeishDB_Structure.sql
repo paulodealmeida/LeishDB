@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `leishdb` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE  IF NOT EXISTS `leishdb` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `leishdb`;
 -- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
 --
@@ -35,6 +35,37 @@ CREATE TABLE `chromosomes` (
   PRIMARY KEY (`id`),
   KEY `fk_organism_chromossome` (`organismid`) USING BTREE,
   CONSTRAINT `chromosomes_ibfk_1` FOREIGN KEY (`organismid`) REFERENCES `organisms` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `crossreference`
+--
+
+DROP TABLE IF EXISTS `crossreference`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `crossreference` (
+  `proteinid` varchar(255) DEFAULT NULL,
+  `databaseid` int(11) DEFAULT NULL,
+  `referenceid` varchar(255) DEFAULT NULL,
+  `geneid` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `databases`
+--
+
+DROP TABLE IF EXISTS `databases`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `databases` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `url` varchar(255) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `urlbyintegration` varchar(255) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -164,3 +195,5 @@ CREATE TABLE `publications` (
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-04-07 16:22:29
