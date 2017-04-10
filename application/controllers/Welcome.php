@@ -1,21 +1,24 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class welcome extends CI_Controller {
+class welcome extends CI_Controller
+{
 
-	public function index()
-	{
-		$this->load->model('Organism_model');
-		$this->load->model('Genes_model');
-		$this->load->model('Ncrna_model');
+    public function index()
+    {
+        $this->load->model('Organism_model');
+        $this->load->model('Genes_model');
+        $this->load->model('Ncrna_model');
 
-		$dados["organisms"] = $this->Organism_model->selectAll();
+        $dados["organisms"] = $this->Organism_model->selectAll();
 
-		//Statistics rates
-		$dados["count_orfs"] = $this->Genes_model->countORFs();
-		$dados["count_organisms"] = $this->Organism_model->countOrganisms();
-		$dados["count_genes"] = $this->Genes_model->countGeneswithfunctions();
-		$dados["count_ncrna"] = $this->Ncrna_model->countncRNA();
-		$this->load->view('leishdb',$dados);
-	}
+        //Statistics rates
+        $dados["count_orfs"] = $this->Genes_model->countORFs();
+        $dados["count_organisms"] = $this->Organism_model->countOrganisms();
+        $dados["count_genes"] = $this->Genes_model->countGeneswithfunctions();
+        $dados["count_ncrna"] = $this->Ncrna_model->countncRNA();
+        $this->load->view('leishdb', $dados);
+    }
+
 }

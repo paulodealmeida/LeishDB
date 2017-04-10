@@ -63,11 +63,11 @@
                                             ?>
                                             <tr>
                                                 <td>
-                                                    <a href="<?= base_url("data?id=".$gene["id"]."&type=c")?>"><?= $gene["id"] ?></a>
+                                                    <a href="<?= base_url("data?id=" . $gene["id"] . "&type=c") ?>"><?= $gene["id"] ?></a>
                                                 </td>
                                                 <td>Coding Gene</td>
                                                 <td>
-                                                    <a href="<?= base_url("data?id=".$gene["id"]."&type=c")?>"><?= $gene["proteinname"] ?></a>
+                                                    <a href="<?= base_url("data?id=" . $gene["id"] . "&type=c") ?>"><?= $gene["proteinname"] ?></a>
                                                 </td>
                                                 <td><?= $gene["end"] - $gene["start"] ?>bp</td>
                                                 <td>
@@ -82,11 +82,11 @@
                                                 <td>chr<?= $gene["chromosomeid"] ?>:<?= $gene["start"] ?>-<?= $gene["end"] ?></td>
                                                 <td>
                                                     <a class="btn btn-cta-primary " title="Download DNA Sequence" target="_blank"
-                                                       href="<?= base_url("fasta?id=".$gene["id"]."&type=c")?>">
+                                                       href="<?= base_url("fasta?id=" . $gene["id"] . "&type=c") ?>">
                                                         <i class="fa fa-download" aria-hidden="true"></i>
                                                     </a> <br><br>
                                                     <a class="btn btn-cta-primary " title="See more"
-                                                       href="<?= base_url("data?id=".$gene["id"]."&type=c")?>">
+                                                       href="<?= base_url("data?id=" . $gene["id"] . "&type=c") ?>">
                                                         <i class="fa fa-eye" aria-hidden="true"></i>
                                                     </a>
                                                 </td>
@@ -94,41 +94,41 @@
                                             <?php
                                         endforeach;
                                     }
-                                //Non-Coding genes
-                                if (count($ncrnas) > 0) {
-                                    foreach ($ncrnas as $ncrna):
-                                        ?>
-                                        <tr>
-                                            <td><a href="<?= base_url("data?id=".$ncrna["id"]."&type=nc")?>"><?= $ncrna["id"] ?></a></td>
-                                            <td>non-coding RNA</td>
-                                            <td><a  href="<?= base_url("data?id=".$ncrna["id"]."&type=nc")?>"><?= $ncrna["type"] ?></a></td>
-                                            <td><?= $ncrna["end"] - $ncrna["start"] ?>bp</td>
-                                            <td>
-                                                <?php
-                                                if ($ncrna["frame"] < 0) {
-                                                    echo "<strong> - </strong>";
-                                                } else {
-                                                    echo "<strong> + </strong>";
-                                                }
-                                                ?>
-                                            </td>
-                                            <td>chr<?= $ncrna["chromosomeid"] ?>:<?= $ncrna["start"] ?>
-                                                -<?= $ncrna["end"] ?></td>
-                                            <td>
-                                                <a class="btn btn-cta-primary " title="Download DNA Sequence" target="_blank"
-                                                   href="<?= base_url("fasta?id=".$ncrna["id"]."&type=nc")?>">
-                                                    <i class="fa fa-download" aria-hidden="true"></i>
-                                                </a><br><br>
-                                                <a class="btn btn-cta-primary " title="See more"
-                                                   href="<?= base_url("data?id=".$ncrna["id"]."&type=nc")?>">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <?php
-                                    endforeach;
-                                }
-                                ?>
+                                    //Non-Coding genes
+                                    if (count($ncrnas) > 0) {
+                                        foreach ($ncrnas as $ncrna):
+                                            ?>
+                                            <tr>
+                                                <td><a href="<?= base_url("data?id=" . $ncrna["id"] . "&type=nc") ?>"><?= $ncrna["id"] ?></a></td>
+                                                <td>non-coding RNA</td>
+                                                <td><a  href="<?= base_url("data?id=" . $ncrna["id"] . "&type=nc") ?>"><?= $ncrna["type"] ?></a></td>
+                                                <td><?= $ncrna["end"] - $ncrna["start"] ?>bp</td>
+                                                <td>
+                                                    <?php
+                                                    if ($ncrna["frame"] < 0) {
+                                                        echo "<strong> - </strong>";
+                                                    } else {
+                                                        echo "<strong> + </strong>";
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td>chr<?= $ncrna["chromosomeid"] ?>:<?= $ncrna["start"] ?>
+                                                    -<?= $ncrna["end"] ?></td>
+                                                <td>
+                                                    <a class="btn btn-cta-primary " title="Download DNA Sequence" target="_blank"
+                                                       href="<?= base_url("fasta?id=" . $ncrna["id"] . "&type=nc") ?>">
+                                                        <i class="fa fa-download" aria-hidden="true"></i>
+                                                    </a><br><br>
+                                                    <a class="btn btn-cta-primary " title="See more"
+                                                       href="<?= base_url("data?id=" . $ncrna["id"] . "&type=nc") ?>">
+                                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                        endforeach;
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>

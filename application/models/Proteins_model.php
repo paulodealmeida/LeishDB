@@ -2,20 +2,25 @@
 
 class Proteins_model extends CI_Model
 {
-    public function __construct()	{
+
+    public function __construct()
+    {
         $this->load->database();
     }
 
-    public function insert($data) {
-        return $this->db->insert('proteins',$data);
+    public function insert($data)
+    {
+        return $this->db->insert('proteins', $data);
     }
 
-    public function update($id,$data) {
+    public function update($id, $data)
+    {
         $this->db->where('id', $id);
         return $this->db->update('proteins', $data);
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         $this->db->where('id', $id);
         return $this->db->delete('proteins');
     }
@@ -40,11 +45,11 @@ class Proteins_model extends CI_Model
         return $query->result_array();
     }
 
-    public function selectAllGoTermsByType($id,$type)
+    public function selectAllGoTermsByType($id, $type)
     {
         $sql = "select pgo.*, go.* from proteinsgo as pgo, geneontology as go where TRIM(go.id) = TRIM(pgo.goid) and 
                 pgo.proteinid LIKE '%" . $this->db->escape_like_str($id) . "%' and go.type LIKE '%" .
-            $this->db->escape_like_str($type) . "%'";
+                $this->db->escape_like_str($type) . "%'";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -64,6 +69,5 @@ class Proteins_model extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
     }
-
 
 }

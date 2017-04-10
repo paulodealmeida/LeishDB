@@ -2,20 +2,25 @@
 
 class Organism_model extends CI_Model
 {
-    public function __construct()	{
+
+    public function __construct()
+    {
         $this->load->database();
     }
 
-    public function insert($data) {
-        return $this->db->insert('organisms',$data);
+    public function insert($data)
+    {
+        return $this->db->insert('organisms', $data);
     }
 
-    public function update($id,$data) {
+    public function update($id, $data)
+    {
         $this->db->where('id', $id);
         return $this->db->update('organisms', $data);
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         $this->db->where('id', $id);
         return $this->db->delete('organisms');
     }

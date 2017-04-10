@@ -2,7 +2,7 @@
 <header id="header" class="header">
     <div class="container">
         <h1 class="logo pull-left">
-            <a class="scrollto" href="<?= base_url("welcome#promo")?>">
+            <a class="scrollto" href="<?= base_url("welcome#promo") ?>">
                 <span class="logo-title">leishDB</span>
             </a>
         </h1><!--//logo-->
@@ -22,23 +22,23 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false">About <span class="caret"></span></a>
                         <ul class="dropdown-menu" style="z-index: 10000">
-                            <li><a href="<?= base_url("welcome#docs")?>" >Citing</a></li>
-                            <li><a href="<?= base_url("welcome#features")?>" >Statistics</a></li>
-                            <li><a href="<?= base_url("welcome#about")?>" >What is LeishDB?</a></li>
-                            <li><a href="<?= base_url("welcome#collaborators")?>" >Team</a></li>
+                            <li><a href="<?= base_url("welcome#docs") ?>" >Citing</a></li>
+                            <li><a href="<?= base_url("welcome#features") ?>" >Statistics</a></li>
+                            <li><a href="<?= base_url("welcome#about") ?>" >What is LeishDB?</a></li>
+                            <li><a href="<?= base_url("welcome#collaborators") ?>" >Team</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a href="http://www.leishdb.com/community/">Community</a></li>
-                    <li class="nav-item"><a href="<?= base_url("welcome#downloads")?>" >Downloads</a></li>
+                    <li class="nav-item"><a href="<?= base_url("welcome#downloads") ?>" >Downloads</a></li>
                     <li class="dropdown nav-item">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false">Tools <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?= base_url("blast")?>" >BLAST</a></li>
-                            <li><a href="<?= base_url("browser")?>" >Genome browser</a></li>
+                            <li><a href="<?= base_url("blast") ?>" >BLAST</a></li>
+                            <li><a href="<?= base_url("browser") ?>" >Genome browser</a></li>
                         </ul>
                     </li>
-                    <form class="navbar-form navbar-left"  method="post" action="<?= base_url("query/actsearch")?>">
+                    <form class="navbar-form navbar-left"  method="post" action="<?= base_url("query/actsearch") ?>">
                         <div class="form-group">
                             <input type="text"  required="required" name="term" id="term" class="form-control" placeholder="Search">
                         </div>
