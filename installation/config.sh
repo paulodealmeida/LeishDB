@@ -31,7 +31,7 @@ install(){
         mysql -uroot -p${rootpasswd} -e "FLUSH PRIVILEGES;"
 
         # Criação da estrutura do banco
-        mysql -uroot -p${rootpasswd} leishdb < LeishDB_Structure.sql
+        mysql -uroot -p${rootpasswd} leishdb < installation/LeishDB_Structure.sql
 
         echo ""
 
