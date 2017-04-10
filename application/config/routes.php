@@ -51,12 +51,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   |		my-controller/my-method	-> my_controller/my_method
  */
 $route['default_controller'] = 'welcome';
-$route['query'] = 'query/search';
+$route['translate_uri_dashes'] = FALSE;
+$route['404_override'] = '';
+
 $route['actadvsearch'] = 'query/actadvsearch';
-$route['export'] = 'export';
-$route['fasta'] = 'export/fasta';
-$route['data'] = 'query/data';
 $route['blast'] = 'tools/BLAST';
 $route['browser'] = 'tools/browser';
-$route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
+$route['data'] = 'query/data';
+$route['export'] = 'export';
+$route['fasta'] = 'export/fasta';
+$route['query'] = 'query/search';
