@@ -63,7 +63,7 @@ install(){
         echo "Please enter logged user"
         read user
         chown ${user}.${user} ${PASTA} -Rf
-        echo "Don't forget to chage the database user password at configuration file 'application/config/database.php'"
+        echo "Don't forget to change the database user password at configuration file 'application/config/database.php'"
 }
 
 uninstall(){
