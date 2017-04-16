@@ -7,12 +7,12 @@ class tools extends CI_Controller
 
     public function BLAST()
     {
-        $this->load->view('blast');
+        $this->load->view('tools/blast');
     }
 
     public function browser()
     {
-        $this->load->view('browser');
+        $this->load->view('tools/browser');
     }
 
 }

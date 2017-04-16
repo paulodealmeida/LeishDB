@@ -36,6 +36,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="<?= base_url("blast") ?>" >BLAST</a></li>
                             <li><a href="<?= base_url("browser") ?>" >Genome browser</a></li>
+                            <li><a href="<?= base_url("collaborative_annotations/create") ?>" >Collaborative Annotation</a></li>
                         </ul>
                     </li>
                     <form class="navbar-form navbar-left"  method="post" action="<?= base_url("query/actsearch") ?>">

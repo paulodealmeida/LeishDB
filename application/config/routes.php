@@ -57,6 +57,10 @@ $route['404_override'] = '';
 $route['actadvsearch'] = 'query/actadvsearch';
 $route['blast'] = 'tools/BLAST';
 $route['browser'] = 'tools/browser';
+
+$route['collaborative_annotations/create'] = 'CollaborativeAnnotations/create';
+$route['collaborative_annotations/store'] = 'CollaborativeAnnotations/store';
+
 $route['data'] = 'query/data';
 $route['export'] = 'export';
 $route['fasta'] = 'export/fasta';

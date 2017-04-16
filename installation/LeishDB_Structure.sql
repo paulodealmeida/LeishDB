@@ -149,7 +149,7 @@ DROP TABLE IF EXISTS `proteins`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `proteins` (
-  `id` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `entryname` text,
   `proteinname` text,
   `genename` varchar(255) DEFAULT NULL,
