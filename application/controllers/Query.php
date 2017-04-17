@@ -5,6 +5,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class query extends CI_Controller
 {
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Genes_model');
+        $this->load->model('Ncrna_model');
+        $this->load->library('session');
+        $this->load->helper('url');
+    }
+
     public function search()
     {
         $this->load->view('search');
@@ -13,10 +22,6 @@ class query extends CI_Controller
     public function actsearch()
     {
         session_cache_limiter(900);
-        $this->load->library('session');
-        $this->load->helper('url');
-        $this->load->model('Genes_model');
-        $this->load->model('Ncrna_model');
 
         if ($this->input->method() === 'post') {
             try {
@@ -39,10 +44,6 @@ class query extends CI_Controller
     public function actadvsearch()
     {
         session_cache_limiter(900);
-        $this->load->library('session');
-        $this->load->helper('url');
-        $this->load->model('Genes_model');
-        $this->load->model('Ncrna_model');
 
         if ($this->input->method() === 'post') {
             try {
@@ -84,11 +85,7 @@ class query extends CI_Controller
 
     public function data()
     {
-        $this->load->library('session');
-        $this->load->helper('url');
         //$this->load->model('Targets_model');
-        $this->load->model('Genes_model');
-        $this->load->model('Ncrna_model');
         $this->load->model('Proteins_model');
         $this->load->model('Chromosomes_model');
 
