@@ -98,7 +98,7 @@ class query extends CI_Controller
                 //$targets = $this->Targets_model->selectByncRNAID($id);
                 $start = $data[0]["start"];
                 $end = $data[0]["end"];
-                $sequence = $this->Chromosomes_model->getSequence($data[0]["chromosomeid"], $start, $end);
+                $sequence = $this->Chromosomes_model->getSequence($data[0]["chromosome_id"], $start, $end);
                 $dados["data"] = $data;
                 $dados["start"] = $start;
                 $dados["end"] = $end;
@@ -110,16 +110,16 @@ class query extends CI_Controller
         } else {
             $data = $this->Genes_model->selectByID($id);
             if (count($data) > 0) {
-                $goterms = $this->Proteins_model->selectAllGoTermsByID($data[0]["proteinid"]);
-                $gotermsb = $this->Proteins_model->selectAllGoTermsByType($data[0]["proteinid"], "b");
-                $gotermsm = $this->Proteins_model->selectAllGoTermsByType($data[0]["proteinid"], "m");
-                $gotermsc = $this->Proteins_model->selectAllGoTermsByType($data[0]["proteinid"], "c");
-                $databases = $this->Proteins_model->selectDatabasesByID($data[0]["proteinid"]);
+                $goterms = $this->Proteins_model->selectAllGoTermsByID($data[0]["protein_id"]);
+                $gotermsb = $this->Proteins_model->selectAllGoTermsByType($data[0]["protein_id"], "b");
+                $gotermsm = $this->Proteins_model->selectAllGoTermsByType($data[0]["protein_id"], "m");
+                $gotermsc = $this->Proteins_model->selectAllGoTermsByType($data[0]["protein_id"], "c");
+                $databases = $this->Proteins_model->selectDatabasesByID($data[0]["protein_id"]);
                 $annotations = $this->Genes_model->selectDatabasesByID($id);
-                $publications = $this->Proteins_model->selectPublicationsByID($data[0]["proteinid"]);
+                $publications = $this->Proteins_model->selectPublicationsByID($data[0]["protein_id"]);
                 $start = $data[0]["start"];
                 $end = $data[0]["end"];
-                $sequence = $this->Chromosomes_model->getSequence($data[0]["chromosomeid"], $start, $end);
+                $sequence = $this->Chromosomes_model->getSequence($data[0]["chromosome_id"], $start, $end);
                 $dados["data"] = $data;
                 $dados["goterms"] = $goterms;
                 $dados["gotermsb"] = $gotermsb;

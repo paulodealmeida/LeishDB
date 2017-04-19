@@ -28,7 +28,7 @@ class Genes_model extends CI_Model
     public function selectAll()
     {
         $sql = "select g.*, p.entryname, p.proteinname, p.genename, p.organism, p.taxonomiclineage, 
-                    p.proteinfamily from genes as g left join proteins as p" . " on (g.proteinid = p.id) 
+                    p.proteinfamily from genes as g left join proteins as p" . " on (g.protein_id = p.id) 
                  ";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -37,16 +37,16 @@ class Genes_model extends CI_Model
     public function selectByID($id)
     {
         $sql = "select g.*, p.entryname, p.proteinname, p.genename, p.organism, p.taxonomiclineage, 
-                    p.proteinfamily from genes as g left join proteins as p" . " on (g.proteinid = p.id) 
+                    p.proteinfamily from genes as g left join proteins as p" . " on (g.protein_id = p.id) 
                     where  g.id = {$this->db->escape_like_str($id)} ";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
 
-    public function selectGenesByCoordinates($chromosomeid, $start, $end)
+    public function selectGenesByCoordinates($chromosome_id, $start, $end)
     {
         $sql = "select g.*,p.entryname, p.proteinname, p.genename, p.organism, p.proteinfamily from genes as g left join 
-        proteins as p on (g.proteinid = p.id) where g.chromosomeid = {$this->db->escape_like_str($chromosomeid)}" . ($start > 0 or
+        proteins as p on (g.protein_id = p.id) where g.chromosome_id = {$this->db->escape_like_str($chromosome_id)}" . ($start > 0 or
                 $end > 0 ? " AND (g.start >= {$this->db->escape_like_str($start)} AND g.end <= {$this->db->escape_like_str($end)})" : "");
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -57,17 +57,17 @@ class Genes_model extends CI_Model
         $sql = "select g.*,p.entryname, p.proteinname, p.genename, p.organism,
         
         p.proteinfamily from genes as g left join proteins as p" .
-                " on (g.proteinid = p.id) where UPPER(p.proteinname) LIKE UPPER('%" . $this->db->escape_like_str($term) . "%') or " .
-                " UPPER(g.proteinid) LIKE UPPER('%" . $this->db->escape_like_str($term) . "%') or g.id LIKE '" .
+                " on (g.protein_id = p.id) where UPPER(p.proteinname) LIKE UPPER('%" . $this->db->escape_like_str($term) . "%') or " .
+                " UPPER(g.protein_id) LIKE UPPER('%" . $this->db->escape_like_str($term) . "%') or g.id LIKE '" .
                 $this->db->escape_like_str($term) . "' " . " or UPPER(p.genename) LIKE UPPER('" . $this->db->escape_like_str($term) .
-                "') and g.proteinid <> '' ";
+                "') and g.protein_id <> '' ";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
 
     public function countGeneswithfunctions()
     {
-        $sql = "select count(*) as count from genes where proteinid <> '' ";
+        $sql = "select count(*) as count from genes where protein_id <> '' ";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -82,7 +82,7 @@ class Genes_model extends CI_Model
     public function selectDatabasesByID($id)
     {
         $sql = "select c.*,d.* from crossreference as c
-		left join `databases` as d on c.databaseid = d.id where  c.geneid = '{$this->db->escape_like_str($id)}'";
+		left join `databases` as d on c.database_id = d.id where  c.gene_id = '{$this->db->escape_like_str($id)}'";
         $query = $this->db->query($sql);
 
         return $query->result_array();

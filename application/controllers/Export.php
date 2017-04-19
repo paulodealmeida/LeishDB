@@ -21,7 +21,7 @@ class export extends CI_Controller
             $data = $this->Ncrna_model->selectByID($id);
 
             foreach ($data as $ncrna):
-                $sequence = $this->Chromosomes_model->getSequence($ncrna["chromosomeid"], $ncrna["start"], $ncrna["end"]);
+                $sequence = $this->Chromosomes_model->getSequence($ncrna["chromosome_id"], $ncrna["start"], $ncrna["end"]);
                 $content = $content . "\r\n > ncRNA {$ncrna["id"]} | {$ncrna["type"]} \r\n ";
                 $i = 0;
                 $tamanho = strlen($sequence[0]["sequence"]);
@@ -44,7 +44,7 @@ class export extends CI_Controller
             $data = $this->Genes_model->selectByID($id);
 
             foreach ($data as $gene):
-                $sequence = $this->Chromosomes_model->getSequence($gene["chromosomeid"], $gene["start"], $gene["end"]);
+                $sequence = $this->Chromosomes_model->getSequence($gene["chromosome_id"], $gene["start"], $gene["end"]);
                 $content = $content . "\r\n > Gene {$gene["id"]} | {$gene["proteinname"]} \r\n ";
                 $i = 0;
                 $tamanho = strlen($sequence[0]["sequence"]);

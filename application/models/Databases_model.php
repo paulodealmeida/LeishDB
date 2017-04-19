@@ -38,18 +38,18 @@ class Databases_model extends CI_Model
         return $query->result_array();
     }
 
-    public function selectDatabasesByProteinID($proteinid)
+    public function selectDatabasesByProteinID($protein_id)
     {
-        $sql = "select c.*,d.* from crossreference as c	left join `databases` as d on c.databaseid = d.id where  
-          c.proteinid = '{$this->db->escape_like_str($proteinid)}' ";
+        $sql = "select c.*,d.* from crossreference as c	left join `databases` as d on c.database_id = d.id where  
+          c.protein_id = '{$this->db->escape_like_str($protein_id)}' ";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
 
-    public function selectDatabasesByGeneID($geneid)
+    public function selectDatabasesByGeneID($gene_id)
     {
-        $sql = "select c.*,d.* from crossreference as c left join `databases` as d on c.databaseid = d.id where  
-          c.geneid = '{$this->db->escape_like_str($geneid)}' ";
+        $sql = "select c.*,d.* from crossreference as c left join `databases` as d on c.database_id = d.id where  
+          c.gene_id = '{$this->db->escape_like_str($gene_id)}' ";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

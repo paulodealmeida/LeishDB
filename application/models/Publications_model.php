@@ -38,9 +38,9 @@ class Publications_model extends CI_Model
         return $query->result_array();
     }
 
-    public function selectByProteinID($proteinid)
+    public function selectByProteinID($protein_id)
     {
-        $this->db->where('proteinid', $proteinid);
+        $this->db->where('protein_id', $protein_id);
         $query = $this->db->get('publications');
         return $query->result_array();
     }

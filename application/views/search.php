@@ -79,7 +79,7 @@
                                                     }
                                                     ?>
                                                 </td>
-                                                <td>chr<?= $gene["chromosomeid"] ?>:<?= $gene["start"] ?>-<?= $gene["end"] ?></td>
+                                                <td>chr<?= $gene["chromosome_id"] ?>:<?= $gene["start"] ?>-<?= $gene["end"] ?></td>
                                                 <td>
                                                     <a class="btn btn-cta-primary " title="Download DNA Sequence" target="_blank"
                                                        href="<?= base_url("fasta?id=" . $gene["id"] . "&type=c") ?>">
@@ -112,7 +112,7 @@
                                                     }
                                                     ?>
                                                 </td>
-                                                <td>chr<?= $ncrna["chromosomeid"] ?>:<?= $ncrna["start"] ?>
+                                                <td>chr<?= $ncrna["chromosome_id"] ?>:<?= $ncrna["start"] ?>
                                                     -<?= $ncrna["end"] ?></td>
                                                 <td>
                                                     <a class="btn btn-cta-primary " title="Download DNA Sequence" target="_blank"

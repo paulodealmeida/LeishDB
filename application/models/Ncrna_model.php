@@ -55,9 +55,9 @@ class Ncrna_model extends CI_Model
         return $query->result_array();
     }
 
-    public function selectByCoordinates($chromosomeid, $start, $end)
+    public function selectByCoordinates($chromosome_id, $start, $end)
     {
-        $sql = "select rna.* from ncrna as rna where rna.chromosomeid = {$this->db->escape_like_str($chromosomeid)}"
+        $sql = "select rna.* from ncrna as rna where rna.chromosome_id = {$this->db->escape_like_str($chromosome_id)}"
                 . ($start > 0 && $end > 0 ? " AND (rna.start >= {$this->db->escape_like_str($start)} AND rna.end <=
        {$this->db->escape_like_int($end)})" : "");
         $query = $this->db->query($sql);

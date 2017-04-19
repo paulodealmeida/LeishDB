@@ -40,15 +40,15 @@ class Proteins_model extends CI_Model
 
     public function selectAllGoTermsByID($id)
     {
-        $sql = "select * from proteinsgo as pgo where pgo.proteinid LIKE '%" . $this->db->escape_like_str($id) . "%'";
+        $sql = "select * from proteinsgo as pgo where pgo.protein_id LIKE '%" . $this->db->escape_like_str($id) . "%'";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
 
     public function selectAllGoTermsByType($id, $type)
     {
-        $sql = "select pgo.*, go.* from proteinsgo as pgo, geneontology as go where TRIM(go.id) = TRIM(pgo.goid) and 
-                pgo.proteinid LIKE '%" . $this->db->escape_like_str($id) . "%' and go.type LIKE '%" .
+        $sql = "select pgo.*, go.* from proteinsgo as pgo, geneontology as go where TRIM(go.id) = TRIM(pgo.geneontology_id) and 
+                pgo.protein_id LIKE '%" . $this->db->escape_like_str($id) . "%' and go.type LIKE '%" .
                 $this->db->escape_like_str($type) . "%'";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -57,7 +57,7 @@ class Proteins_model extends CI_Model
     public function selectDatabasesByID($id)
     {
         $sql = "select c.*,d.* from crossreference as c
-		left join `databases` as d on c.databaseid = d.id where  c.proteinid = '{$this->db->escape_like_str($id)}'";
+		left join `databases` as d on c.database_id = d.id where  c.protein_id = '{$this->db->escape_like_str($id)}'";
         $query = $this->db->query($sql);
 
         return $query->result_array();
@@ -65,7 +65,7 @@ class Proteins_model extends CI_Model
 
     public function selectPublicationsByID($id)
     {
-        $sql = "select p.* from publications as p where  p.proteinid LIKE '%{$this->db->escape_like_str($id)}%'";
+        $sql = "select p.* from publications as p where  p.protein_id LIKE '%{$this->db->escape_like_str($id)}%'";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
