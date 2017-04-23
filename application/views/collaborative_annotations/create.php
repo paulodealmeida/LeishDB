@@ -24,31 +24,45 @@
                     <div class="col-md-12">
                         <?php echo form_open('collaborative_annotations/store', ['class' => 'form-group']); ?>
 
-                        <div class="form-group">
-                            <?php echo form_label('entryname :'); ?>
-                            <?php echo form_input(['name' => 'entryname', 'class' => 'form-control']); ?>
-                        </div>
-                        <div class="form-group">
-                            <?php echo form_label('proteinname :'); ?>
-                            <?php echo form_input(['name' => 'proteinname', 'class' => 'form-control']); ?>
-                        </div>
-                        <div class="form-group">
-                            <?php echo form_label('genename :'); ?>
-                            <?php echo form_input(['name' => 'genename', 'class' => 'form-control']); ?>
-                        </div>
-                        <div class="form-group">
-                            <?php echo form_label('organism :'); ?>
-                            <?php echo form_input(['name' => 'organism', 'class' => 'form-control']); ?>
-                        </div>
-                        <div class="form-group">
-                            <?php echo form_label('taxonomiclineage :'); ?>
-                            <?php echo form_input(['name' => 'taxonomiclineage', 'class' => 'form-control']); ?>
-                        </div>
-                        <div class="form-group">
-                            <?php echo form_label('proteinfamily :'); ?>
-                            <?php echo form_input(['name' => 'proteinfamily', 'class' => 'form-control']); ?>
+                        <h4>Protein</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <?php echo form_label('id :'); ?>
+                                    <?php echo form_input(['name' => 'id', 'class' => 'form-control']); ?>
+                                </div>
+                                <div class="form-group">
+                                    <?php echo form_label('entryname :'); ?>
+                                    <?php echo form_input(['name' => 'entryname', 'class' => 'form-control']); ?>
+                                </div>
+                                <div class="form-group">
+                                    <?php echo form_label('proteinname :'); ?>
+                                    <?php echo form_input(['name' => 'proteinname', 'class' => 'form-control']); ?>
+                                </div>
+                                <div class="form-group">
+                                    <?php echo form_label('genename :'); ?>
+                                    <?php echo form_input(['name' => 'genename', 'class' => 'form-control']); ?>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <?php echo form_label('organism :'); ?>
+                                    <?php echo form_input(['name' => 'organism', 'class' => 'form-control']); ?>
+                                </div>
+                                <div class="form-group">
+                                    <?php echo form_label('taxonomiclineage :'); ?>
+                                    <?php echo form_input(['name' => 'taxonomiclineage', 'class' => 'form-control']); ?>
+                                </div>
+                                <div class="form-group">
+                                    <?php echo form_label('proteinfamily :'); ?>
+                                    <?php echo form_input(['name' => 'proteinfamily', 'class' => 'form-control']); ?>
+                                </div>
+                            </div>
                         </div>
 
+                        <hr>
+                        
                         <!--<a href="{{ URL::previous() }}" class="btn btn-default">Voltar</a>-->
                         <button type="submit" class="btn btn-primary">Salvar</button>
                         <?php echo form_close(); ?>

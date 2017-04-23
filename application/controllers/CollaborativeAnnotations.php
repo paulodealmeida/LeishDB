@@ -26,6 +26,7 @@ class CollaborativeAnnotations extends CI_Controller
         $this->load->helper('url');
 
         $protein = [
+            'id' => $this->input->post('id'),
             'entryname' => $this->input->post('entryname'),
             'proteinname' => $this->input->post('proteinname'),
             'genename' => $this->input->post('genename'),
@@ -33,11 +34,16 @@ class CollaborativeAnnotations extends CI_Controller
             'taxonomiclineage' => $this->input->post('taxonomiclineage'),
             'proteinfamily' => $this->input->post('proteinfamily'),
         ];
-
-        $id = $this->Proteins_model->insert($protein);
-
-        $dados["id"] = $id;
+        $this->saveProtein($protein);
+        
+        $dados['id'] = 6982;
+        $dados['type'] = 'c';
         $this->load->view('data', $dados);
+    }
+
+    protected function saveProtein($_protein)
+    {
+        $this->Proteins_model->insert($_protein);
     }
 
 }
