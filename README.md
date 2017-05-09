@@ -17,25 +17,19 @@ TORRES, Felipe Guimarães. Leishmania braziliensis: reanotação estruturação 
 * UEFS
 
 ## Installation
-#  Installation
-```bash     
 This script only runs on Ubuntu 16.04.
 
 After clone the project:
 
+```bash     
 $ sudo chmod +x installation/config.sh
 $ sudo ./installation/config.sh install
-
-Enter root user MySQL password when asked. Enter 
-logged user when asked. Don't forget to change the 
-database user password at configuration file 
-'application/config/database.php'
-
-After this steps access http://www.leishdb.local/ 
-the project is runing but the database is empty. 
-You can populate it dowloading the script from this link.
-
 ```
+
+Enter root user MySQL password when asked. Enter  logged user when asked. Don't forget to change the database user password at configuration file 'application/config/database.php'
+
+After this steps access http://www.leishdb.local/  the project is runing but the database is empty. You can populate it dowloading the script from this link.
+
 # Download the last version of LeishDB source code
 ```bash  
 wget https://github.com/fgtorres/LeishDB/archive/1.0.zip
@@ -43,7 +37,6 @@ mv 1.0.zip LeishDB.zip
 mv LeishDB.zip /var/www/html/
 cd /var/www/html/
 gunzip LeishDB.zip 
-
 ```
 
 # Restore and create the database backup
@@ -145,4 +138,4 @@ case "$1" in
 	*) echo "Use parameters install or uninstall"
 esac 
 ```
-This script only runs on Ubuntu 16.04.
+This script only runs on Ubuntu 16 or newest.
