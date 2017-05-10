@@ -91,6 +91,7 @@ CREATE TABLE IF NOT EXISTS `leishdb`.`genes` (
   `chromosome_id` INT(11) UNSIGNED NOT NULL,
   `size` INT(11) NOT NULL,
   `protein_id` VARCHAR(255) NOT NULL,
+  `rnaseqhitnumber` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_genes_proteins1_idx` (`protein_id` ASC),
   INDEX `fk_genes_chromosomes1_idx` (`chromosome_id` ASC),
@@ -165,6 +166,7 @@ CREATE TABLE IF NOT EXISTS `leishdb`.`ncrna` (
   `transcript` VARCHAR(10) NOT NULL,
   `have_target_genes` VARCHAR(10) NOT NULL,
   `conserved_species` TEXT NULL DEFAULT NULL,
+  `rnaseqhitnumber` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_ncrna_chromosomes1_idx` (`chromosome_id` ASC),
   CONSTRAINT `fk_ncrna_chromosomes1`
