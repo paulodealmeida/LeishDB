@@ -25,7 +25,6 @@
                             <li><a href="<?= base_url("welcome#docs")?>" >Citing</a></li>
                             <li><a href="<?= base_url("welcome#features")?>" >Statistics</a></li>
                             <li><a href="<?= base_url("welcome#about")?>" >What is LeishDB?</a></li>
-                            <li><a href="<?= base_url("welcome#collaborators")?>" >Team</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a href="http://www.leishdb.com/community/">Community</a></li>
