@@ -7,12 +7,12 @@ class query extends CI_Controller {
 	{
 		$this->load->view('search');
 	}
-
 	public function actsearch()
 	{
 	    session_cache_limiter(900);
         $this->load->library('session');
         $this->load->helper('url');
+        $this->load->helper('pubmed');
         $this->load->model('Genes_model');
         $this->load->model('Ncrna_model');
 
@@ -24,7 +24,8 @@ class query extends CI_Controller {
                 if(count($this->session->userdata('genes'))>0 or count($this->session->userdata('ncrna'))>0){
                     $this->load->view('search');
                 }else{
-                    echo "<script> window.location.href='" . base_url() . "welcome'; alert('We not fount registers relationed the your search. Try again !');</script>";
+                    $this->session->set_flashdata('message', "We not fount registers relationed the your search. Try again !");
+                    echo "<script> window.location.href='" . base_url() . "welcome';</script>";
                 }
             } catch (Exception $e) {
                 $this->load->library('session');
@@ -70,7 +71,8 @@ class query extends CI_Controller {
                 if(count($this->session->userdata('genes'))>0 or count($this->session->userdata('ncrna'))>0){
                     $this->load->view('search');
                 }else{
-                    echo "<script> window.location.href='" . base_url() . "welcome'; alert('We not found registers relationed the your search. Try again !');</script>";
+                    $this->session->set_flashdata('message', "We not fount registers relationed the your search. Try again !");
+                    echo "<script> window.location.href='" . base_url() . "welcome';</script>";
                 }
             } catch (Exception $e) {
                 $this->load->library('session');
@@ -106,7 +108,8 @@ class query extends CI_Controller {
                 $dados["sequence"] = $sequence;
                 //$dados["targets"] = $targets;
             }else{
-                echo "<script> window.location.href='" . base_url() . "welcome'; alert('We not fount registers relationed this gene. Try again !');</script>";
+                $this->session->set_flashdata('message','We not fount registers relationed this gene. Try again !');
+                echo "<script> window.location.href='" . base_url() . "welcome'; </script>";
             }
 		}else{
 			$data =  $this->Genes_model->selectByID($id);
@@ -134,7 +137,8 @@ class query extends CI_Controller {
                 $dados["end"] = $end;
                 //$dados["targets"] = array();
             }else{
-                echo "<script> window.location.href='" . base_url() . "welcome'; alert('We not fount registers relationed this gene. Try again !');</script>";
+                $this->session->set_flashdata('message',"We not fount registers relationed the your search. Try again !");
+                echo "<script> window.location.href='" . base_url() . "welcome';</script>";
             }
 		};
 
