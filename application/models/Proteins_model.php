@@ -40,6 +40,13 @@ class Proteins_model extends CI_Model
         return $query->result_array();
     }
 
+    public function selectAllProteinsDescriptions()
+    {
+        $sql = "Select  DISTINCT p.proteinname from proteins as p";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
     public function selectAllGoTermsByType($id,$type)
     {
         $sql = "select pgo.*, go.* from proteinsgo as pgo, geneontology as go where TRIM(go.id) = TRIM(pgo.goid) and 
