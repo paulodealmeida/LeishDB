@@ -1,0 +1,33 @@
+version: '2'
+services:
+  database:
+    image: mysql:5.7
+    container_name: LeishDB_DataBase
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      - TZ=America/Bahia
+      - MYSQL_ROOT_PASSWORD=leishdb
+      - MYSQL_DATABASE=leishdb
+    expose:
+      - 3306
+    volumes:
+      - ./MYSQL:/var/lib/mysql
+
+  backend:
+    build: backend
+    container_name: LeishDB_BackEnd
+    volumes:
+      - ./application:/var/www/application
+      - ./logs/httpd:/var/log/httpd
+      - ./backend/conf:/etc/httpd/conf
+      - ./base/:/var/www/application/base
+    ports:
+      - "80:80"
+    expose: 
+      - 80
+    depends_on:
+      - "database"
+    environment:
+      - TZ=America/Bahia
