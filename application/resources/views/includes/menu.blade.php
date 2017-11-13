@@ -26,6 +26,9 @@
                 <a href="#citing" class="page-scroll">Citing</a>
             </li>
             <li>
+                <a href="mirna-graph" class="page-scroll">miRNA</a>
+            </li>
+            <li>
                 <a href="#community" class="page-scroll">Community</a>
             </li>
             <li class="dropdown nav-item">

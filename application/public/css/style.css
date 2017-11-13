@@ -79,11 +79,11 @@ hr {
 	text-transform: uppercase;
 	color: #444;
 	font-weight: 400;
-	font-size: 15px;
+	font-size: 12px;
 	letter-spacing: 1px;
 }
 #menu.navbar-default .navbar-nav > li > a:hover {
-	color: #0ba2db;
+	color: #fff;
 }
 .on {
 	background-color: #17baef !important;
