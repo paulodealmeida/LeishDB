@@ -231,32 +231,21 @@
             <hr>
         </div>
         <div class="row">
-            <div class="col-xs-12 col-md-12">
-                <table class="table table-responsive">
-                    <thead>
-                        <tr>
-                            <th class="text-center">Organism</th>
-                            <th class="text-center">GFF</th>
-                            <th class="text-center">FASTA</th>
-                            <th class="text-center">BED</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th class="text-center">L. braziliensis (MHOM/BR/75/M2904)</th>
-                            <th class="text-center">
-                                <a class="btn btn-warning" href="../downloads/gff.zip">Download GFF</a>
-                            </th>
-                            <th class="text-center">
-                                <a class="btn btn-warning" href="http://www.leishdb.com/downloads/fasta.zip">Download FASTA
-                                </a>
-                            </th>
-                            <th class="text-center">
-                                <a class="btn btn-warning" href="../downloads/bed.zip">Download BED</a>
-                            </th>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="col-xs-12 col-md-3">
+                <h4>Organism</h4>
+                <p>L. braziliensis (MHOM/BR/75/M2904)</p>
+            </div>
+            <div class="col-xs-12 col-md-3">
+                <h4>GFF</h4>
+                <p><a class="btn btn-warning" href="../downloads/gff.zip">Download GFF</a></p>
+            </div>
+            <div class="col-xs-12 col-md-3">
+                <h4>FASTA</h4>
+                <p><a class="btn btn-warning" href="http://www.leishdb.com/downloads/fasta.zip">Download FASTA</a></p>
+            </div>
+            <div class="col-xs-12 col-md-3">
+                <h4>BED</h4>
+                <p><a class="btn btn-warning" href="../downloads/bed.zip">Download BED</a></p>
             </div>
         </div>
     </div>
