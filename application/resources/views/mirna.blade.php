@@ -1,6 +1,6 @@
-@extends('layouts.base') @section('content')
+@extends('layouts.base') 
 
-
+@section('style')
 <style>
     .links line {
         stroke: #999;
@@ -19,14 +19,9 @@
         border-color: #17baef;
     }
 </style>
+@endsection
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-md-12">
-            <svg width="960" height="600"></svg>
-        </div>
-    </div>
-</div>
+@section('scripts')
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
     var svg = d3.select("svg"),
@@ -122,4 +117,14 @@
         d.fy = null;
     }
 </script>
+@endsection
+
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <svg width="960" height="600"></svg>
+        </div>
+    </div>
+</div>
 @endsection
