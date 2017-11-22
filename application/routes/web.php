@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/mirna-graph', function () {
     return view('mirna');
 });
+
+Route::get('/search', function () {
+    return view('search');
+});
