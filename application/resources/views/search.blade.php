@@ -1,4 +1,4 @@
-@extends('layouts.base') 
+@extends('layouts.base')
 
 @section('style')
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
@@ -59,6 +59,37 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="#">2584</a>
+                                        </td>
+                                        <td>Coding Gene</td>
+                                        <td>
+                                            <a href="#">TATE DNA Transposon</a>
+                                            <br> Genomic location: chr18:109-6297
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-primary" href="#" title="Download DNA Sequence" target="_blank" role="button">
+                                                <i class="fa fa-download" aria-hidden="true"></i>
+                                            </a>
+                                            <a class="btn btn-primary" href="#" title="See more" role="button">
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gecko</td>
+                                        <td>Firefox 1.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>
+                                            <a class="btn btn-primary" href="#" title="Download DNA Sequence" target="_blank" role="button">
+                                                <i class="fa fa-download" aria-hidden="true"></i>
+                                            </a>
+                                            <a class="btn btn-primary" href="#" title="See more" role="button">
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td>Trident</td>
                                         <td>Internet Explorer 4.0
@@ -126,19 +157,6 @@
                                         <td>Trident</td>
                                         <td>AOL browser (AOL desktop)</td>
                                         <td>Win XP</td>
-                                        <td>
-                                            <a class="btn btn-primary" href="#" title="Download" role="button">
-                                                <i class="fa fa-download" aria-hidden="true"></i>
-                                            </a>
-                                            <a class="btn btn-primary" href="#" title="See more" role="button">
-                                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Firefox 1.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
                                         <td>
                                             <a class="btn btn-primary" href="#" title="Download" role="button">
                                                 <i class="fa fa-download" aria-hidden="true"></i>

@@ -22,3 +22,7 @@ Route::get('/mirna-graph', function () {
 Route::get('/search', function () {
     return view('search');
 });
+
+Route::get('/search-detail', function () {
+    return view('search-detail');
+});

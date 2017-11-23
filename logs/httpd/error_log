@@ -76,3 +76,9 @@ AH00558: httpd: Could not reliably determine the server's fully qualified domain
 [Wed Nov 22 17:46:36.582751 2017] [lbmethod_heartbeat:notice] [pid 19] AH02282: No slotmem from mod_heartmonitor
 [Wed Nov 22 17:46:36.605651 2017] [mpm_prefork:notice] [pid 19] AH00163: Apache/2.4.6 (CentOS) PHP/7.1.10 configured -- resuming normal operations
 [Wed Nov 22 17:46:36.605680 2017] [core:notice] [pid 19] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Thu Nov 23 06:06:13.439526 2017] [suexec:notice] [pid 23] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+[Thu Nov 23 06:06:13.495183 2017] [auth_digest:notice] [pid 23] AH01757: generating secret for digest authentication ...
+[Thu Nov 23 06:06:13.496922 2017] [lbmethod_heartbeat:notice] [pid 23] AH02282: No slotmem from mod_heartmonitor
+[Thu Nov 23 06:06:13.590268 2017] [mpm_prefork:notice] [pid 23] AH00163: Apache/2.4.6 (CentOS) PHP/7.1.10 configured -- resuming normal operations
+[Thu Nov 23 06:06:13.590329 2017] [core:notice] [pid 23] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
