@@ -30,3 +30,7 @@ Route::get('/search-detail', function () {
 Route::get('/blast', function () {
     return view('blast');
 });
+
+Route::get('/genome-browser', function () {
+    return view('genome-browser');
+});
