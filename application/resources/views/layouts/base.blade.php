@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	@include('includes.head')
-</head>
+    <head>
+        @include('includes.head')
+    </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-	<!-- Navigation
-    ==========================================-->
-	<nav id="menu" class="navbar navbar-default navbar-fixed-top">
-		@include('includes.menu')
-	</nav>
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-	@yield('content')
+        <nav id="menu" class="navbar navbar-default navbar-fixed-top">
+            @include('includes.menu')
+        </nav>
 
-	<div id="footer">
-		@include('includes.footer')
-	</div>
+        @yield('content')
 
-	@include('includes.scripts')
+        <div id="footer">
+            @include('includes.footer')
+        </div>
 
-</body>
+        @include('includes.scripts')
+
+    </body>
 
 </html>
