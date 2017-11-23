@@ -20,9 +20,6 @@
         -o-transition: -o-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
         transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
         margin: 91px 4% 4%;
-        /*        margin-left: 4%;
-                margin-right: 4%;
-                margin-top: 91px;*/
         min-height: 100%;
     }
     #menu.navbar-default {

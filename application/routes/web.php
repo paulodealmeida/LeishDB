@@ -26,3 +26,7 @@ Route::get('/search', function () {
 Route::get('/search-detail', function () {
     return view('search-detail');
 });
+
+Route::get('/blast', function () {
+    return view('blast');
+});
