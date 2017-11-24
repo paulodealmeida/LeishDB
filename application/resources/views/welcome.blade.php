@@ -1,5 +1,14 @@
-@extends('layouts.base') @section('content')
+@extends('layouts.base') 
 
+@section('style')
+<style>
+    .progress-bar {
+        color: black;
+    }
+</style>
+@endsection
+
+@section('content')
 <!-- Header -->
 <header id="header">
     <div class="intro">
@@ -16,7 +25,7 @@
                             <div class="col-xs-12 col-md-12">
                                 <form action="http://www.leishdb.com/query/actsearch" method="post">
                                     <input type="text" class="form-control ui-autocomplete-input" name="term" id="term" placeholder="Proteins names, UNIPROT ID, ncRNA type, Gene name, LeishDB ID"
-                                        required="required" style="border-radius: 10px; height: 60px" autocomplete="off">
+                                           required="required" style="border-radius: 10px; height: 60px" autocomplete="off">
                                     <br>
                                     <div>
                                         <button type="submit" class="btn btn-warning btn-lg page-scroll" target="_blank">Search</button>
@@ -144,78 +153,59 @@
         <div class="row">
             <div class="col-xs-12 col-md-6">
                 <div class="statistics-text">
-                    <p></p>
-                    <p></p>
-                    <div class="list-style">
-                        <div class="col-lg-12 col-sm-12 col-xs-12">
-                            <ul>
-                                <li>1 annotated organism (L. braziliensis)</li>
-                                <li>11491 predicted ORFs</li>
-                                <li>5263 genes with defined function</li>
-                                <li>10595 predicted and classified non-coding RNAs</li>
-                            </ul>
-                        </div>
+                    <h3>&nbsp;</h3>
+                    <div class="row">
+                        <p>1 annotated organism (L. braziliensis)</p>
+                        <p>11491 predicted ORFs</p>
+                        <p>5263 genes with defined function</p>
+                        <p>10595 predicted and classified non-coding RNAs</p>
                     </div>
                 </div>
             </div>
             <div class="col-xs-12 col-md-6">
                 <div class="statistics-text">
                     <h3>Annotations in running</h3>
-                    <div class="list-style">
-                        <ul class="feature-list list-unstyled">
-                            <div class="row">
-                                <div class="col-sm-5">
-                                    <li>
-                                        L. braziliensis
-                                        <div class="progress" style="width: 100%;">
-                                            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-                                                100% - Completed.
-                                            </div>
-                                        </div>
-                                    </li>
-                                </div>
-                                <div class="col-sm-5">
-                                    <li>
-                                        L. major
-                                        <div class="progress" style="width: 100%;">
-                                            <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:10%">
-                                                10% - Downloading the files...
-                                            </div>
-                                        </div>
-                                    </li>
-                                </div>
-                                <div class="col-sm-5">
-                                    <li>
-                                        L. peruviania
-                                        <div class="progress" style="width: 100%;">
-                                            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                                                0% - Waiting on the queue...
-                                            </div>
-                                        </div>
-                                    </li>
-                                </div>
-                                <div class="col-sm-5">
-                                    <li>
-                                        L. panamensis
-                                        <div class="progress" style="width: 100%;">
-                                            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                                                0% - Waiting on the queue...
-                                            </div>
-                                        </div>
-                                    </li>
-                                </div>
-                                <div class="col-sm-5">
-                                    <li>
-                                        L. amazonensis
-                                        <div class="progress" style="width: 100%;">
-                                            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                                                0% - Waiting on the queue...
-                                            </div>
-                                        </div>
-                                    </li>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            L. braziliensis
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                                    100% - Completed
                                 </div>
                             </div>
-                        </ul>
+                        </div>
+                        <div class="col-sm-5">
+                            L. major
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:10%">
+                                    10% - Downloading the files...
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            L. peruviania
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                                    0% - Waiting on the queue...
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            L. panamensis
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                                    0% - Waiting on the queue...
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            L. amazonensis
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                                    0% - Waiting on the queue...
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
