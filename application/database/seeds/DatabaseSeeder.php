@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call(DatabasesTableSeeder::class);
-
+        $this->call(GeneontologyTableSeeder::class);
         $this->call(ChromosomesTableSeeder::class);
 
         $this->call(CrossreferenceTableSeeder::class);
