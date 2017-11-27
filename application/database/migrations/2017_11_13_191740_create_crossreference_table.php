@@ -15,12 +15,12 @@ class CreateCrossreferenceTable extends Migration
     {
         Schema::create('crossreference', function (Blueprint $table) {
 
-            $table->string('protein_id');
+            $table->string('protein_id')->nullable();
             $table->foreign('protein_id')->references('id')->on('proteins');
             $table->integer('database_id')->unsigned();
             $table->foreign('database_id')->references('id')->on('databases');
             $table->string('reference_id');
-            $table->integer('gene_id')->unsigned();
+            $table->integer('gene_id')->unsigned()->nullable();
             $table->foreign('gene_id')->references('id')->on('genes');
 
             $table->timestamps();
