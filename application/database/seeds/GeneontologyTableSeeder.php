@@ -495,9 +495,9 @@ class GeneontologyTableSeeder extends Seeder
         Geneontology::create(['id' => 'GO:0006168', 'description' => 'adenine salvage', 'type' => 'b']);
         Geneontology::create(['id' => 'GO:0006177', 'description' => 'GMP biosynthetic process', 'type' => 'b']);
         Geneontology::create(['id' => 'GO:0006183', 'description' => 'GTP biosynthetic process', 'type' => 'b']);
-        Geneontology::create(['id' => 'GO:0006189', 'description' => 'IMP biosynthetic process', 'type' => 'b']);
+        Geneontology::create(['id' => 'GO:0006189', 'description' => '\'de novo\' IMP biosynthetic process', 'type' => 'b']);
         Geneontology::create(['id' => 'GO:0006206', 'description' => 'pyrimidine nucleobase metabolic process', 'type' => 'b']);
-        Geneontology::create(['id' => 'GO:0006207', 'description' => 'pyrimidine nucleobase biosynthetic process', 'type' => 'b']);
+        Geneontology::create(['id' => 'GO:0006207', 'description' => '\'de novo\' pyrimidine nucleobase biosynthetic process', 'type' => 'b']);
         Geneontology::create(['id' => 'GO:0006220', 'description' => 'pyrimidine nucleotide metabolic process', 'type' => 'b']);
         Geneontology::create(['id' => 'GO:0006228', 'description' => 'UTP biosynthetic process', 'type' => 'b']);
         Geneontology::create(['id' => 'GO:0006241', 'description' => 'CTP biosynthetic process', 'type' => 'b']);
@@ -1236,7 +1236,7 @@ class GeneontologyTableSeeder extends Seeder
         Geneontology::create(['id' => 'GO:0034314', 'description' => 'Arp2/3 complex-mediated actin nucleation', 'type' => 'b']);
         Geneontology::create(['id' => 'GO:0034321', 'description' => 'alcohol O-octanoyltransferase activity', 'type' => 'm']);
         Geneontology::create(['id' => 'GO:0034338', 'description' => 'short-chain carboxylesterase activity', 'type' => 'm']);
-        Geneontology::create(['id' => 'GO:0034354', 'description' => 'NAD biosynthetic process from tryptophan', 'type' => 'b']);
+        Geneontology::create(['id' => 'GO:0034354', 'description' => '\'de novo\' NAD biosynthetic process from tryptophan', 'type' => 'b']);
         Geneontology::create(['id' => 'GO:0034450', 'description' => 'ubiquitin-ubiquitin ligase activity', 'type' => 'm']);
         Geneontology::create(['id' => 'GO:0034457', 'description' => 'Mpp10 complex', 'type' => 'c']);
         Geneontology::create(['id' => 'GO:0034464', 'description' => 'BBSome', 'type' => 'c']);
@@ -1354,7 +1354,7 @@ class GeneontologyTableSeeder extends Seeder
         Geneontology::create(['id' => 'GO:0043651', 'description' => 'linoleic acid metabolic process', 'type' => 'b']);
         Geneontology::create(['id' => 'GO:0044145', 'description' => 'modulation of development of symbiont involved in interaction with host', 'type' => 'b']);
         Geneontology::create(['id' => 'GO:0044206', 'description' => 'UMP salvage', 'type' => 'b']);
-        Geneontology::create(['id' => 'GO:0044208', 'description' => 'AMP biosynthetic process', 'type' => 'b']);
+        Geneontology::create(['id' => 'GO:0044208', 'description' => '\'de novo\' AMP biosynthetic process', 'type' => 'b']);
         Geneontology::create(['id' => 'GO:0044209', 'description' => 'AMP salvage', 'type' => 'b']);
         Geneontology::create(['id' => 'GO:0044211', 'description' => 'CTP salvage', 'type' => 'b']);
         Geneontology::create(['id' => 'GO:0044249', 'description' => 'cellular biosynthetic process', 'type' => 'b']);
@@ -1566,7 +1566,7 @@ class GeneontologyTableSeeder extends Seeder
         Geneontology::create(['id' => 'GO:0071025', 'description' => 'RNA surveillance', 'type' => 'b']);
         Geneontology::create(['id' => 'GO:0071166', 'description' => 'ribonucleoprotein complex localization', 'type' => 'b']);
         Geneontology::create(['id' => 'GO:0071203', 'description' => 'WASH complex', 'type' => 'c']);
-        Geneontology::create(['id' => 'GO:0071266', 'description' => 'L-methionine biosynthetic process', 'type' => 'b']);
+        Geneontology::create(['id' => 'GO:0071266', 'description' => '\'de novo\' L-methionine biosynthetic process', 'type' => 'b']);
         Geneontology::create(['id' => 'GO:0071277', 'description' => 'cellular response to calcium ion', 'type' => 'b']);
         Geneontology::create(['id' => 'GO:0071320', 'description' => 'cellular response to cAMP', 'type' => 'b']);
         Geneontology::create(['id' => 'GO:0071339', 'description' => 'MLL1 complex', 'type' => 'c']);
