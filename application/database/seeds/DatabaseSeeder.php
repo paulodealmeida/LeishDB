@@ -6,7 +6,7 @@ class DatabaseSeeder extends Seeder
 {
 
     /**
-     * Run the database seeds.
+     * Run the database seeds.  
      *
      * @return void
      */
@@ -15,12 +15,15 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call(OrganismsTableSeeder::class);
-        
+        //$this->call(ProteinsTableSeeder::class);
         $this->call(DatabasesTableSeeder::class);
         $this->call(GeneontologyTableSeeder::class);
         $this->call(ChromosomesTableSeeder::class);
-
+        //$this->call(GenesTableSeeder::class);
+        //$this->call(NcrnaTableSeeder::class);
         $this->call(CrossreferenceTableSeeder::class);
+        $this->call(ProteinsgoTableSeeder::class);
+        //$this->call(PublicationsTableSeeder::class);
 
         Model::reguard();
     }
