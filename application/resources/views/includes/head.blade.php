@@ -25,12 +25,12 @@
 <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">-->
 
 <!-- Bootstrap -->
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+{!! Html::style('css/bootstrap.min.css') !!}
+{!! Html::style('fonts/font-awesome/css/font-awesome.css') !!}
 
 <!-- Stylesheet
 ================================================== -->
-<link rel="stylesheet" type="text/css" href="css/style.css">
+{!! Html::style('css/style.css') !!}
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

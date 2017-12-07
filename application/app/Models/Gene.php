@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Gene extends Model
 {
-    
-     /**
+
+    /**
      * The database table used by the model.
      *
      * @var string
      */
     protected $table = 'genes';
-    
+
     /**
      * Attributes that should be mass-assignable.
      *
@@ -48,5 +48,15 @@ class Gene extends Model
      * @var array
      */
     protected $dates = [];
+
+    public function chromosome()
+    {
+        return $this->belongsTo('App\Models\Chromosome');
+    }
+
+    public function protein()
+    {
+        return $this->belongsTo('App\Models\Protein');
+    }
 
 }

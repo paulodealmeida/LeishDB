@@ -5,6 +5,10 @@
     .progress-bar {
         color: black;
     }
+    .autocomplete-input {
+        border-radius: 10px;
+        height: 60px;
+    }
 </style>
 @endsection
 
@@ -23,18 +27,15 @@
 
                         <div class="row">
                             <div class="col-xs-12 col-md-12">
-                                <form action="http://www.leishdb.com/query/actsearch" method="post">
-                                    <input type="text" class="form-control ui-autocomplete-input" name="term" id="term" placeholder="Proteins names, UNIPROT ID, ncRNA type, Gene name, LeishDB ID"
-                                           required="required" style="border-radius: 10px; height: 60px" autocomplete="off">
-                                    <br>
-                                    <div>
-                                        <button type="submit" class="btn btn-warning btn-lg page-scroll" target="_blank">Search</button>
-                                        <button type="button" class="btn btn-success btn-lg page-scroll" data-toggle="modal" data-target="#advancedSearch">
-                                            Advanced Search
-                                        </button>
-                                        <!--<a href="../index.php?p=blast.php" class="btn btn-cta-secondary" >BLAST</a>-->
-                                    </div>
-                                </form>
+                                {!! Form::open(['route' => 'search.index', 'method' => 'GET']) !!}
+                                <div class="form-group">
+                                    {!! Form::text('term', old('term'), ['class' => 'form-control autocomplete-input', 'placeholder'=>'Proteins names, UNIPROT ID, ncRNA type, Gene name, LeishDB ID']) !!}
+                                </div>
+                                <button type="submit" class="btn btn-warning btn-lg page-scroll">Search</button>
+                                <button type="button" class="btn btn-success btn-lg page-scroll" data-toggle="modal" data-target="#advancedSearch">
+                                    Advanced Search
+                                </button>
+                                {!! Form::close() !!}
                             </div>
                         </div>
                     </div>

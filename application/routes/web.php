@@ -1,36 +1,22 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-//Route::view('/about', 'pages.about');
-Route::get('/', function () {
-    return view('welcome');
-});
+  |--------------------------------------------------------------------------
+  | Web Routes
+  |--------------------------------------------------------------------------
+  |
+  | Here is where you can register web routes for your application. These
+  | routes are loaded by the RouteServiceProvider within a group which
+  | contains the "web" middleware group. Now create something great!
+  |
+ */
 
-Route::get('/mirna-graph', function () {
-    return view('mirna');
-});
+Route::view('/', 'welcome');
 
-Route::get('/search', function () {
-    return view('search');
-});
+Route::resource('search', 'SearchController');
 
-Route::get('/search-detail', function () {
-    return view('search-detail');
-});
+Route::view('/mirna-graph', 'mirna');
 
-Route::get('/blast', function () {
-    return view('blast');
-});
+Route::view('/blast', 'blast');
 
-Route::get('/genome-browser', function () {
-    return view('genome-browser');
-});
+Route::view('/genome-browser', 'genome-browser');
