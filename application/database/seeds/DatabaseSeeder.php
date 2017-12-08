@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(GeneontologyTableSeeder::class);
         $this->call(ChromosomesTableSeeder::class);
         //$this->call(GenesTableSeeder::class);
-        //$this->call(NcrnaTableSeeder::class);
+        $this->call(NcrnaTableSeeder::class);
         $this->call(CrossreferenceTableSeeder::class);
         $this->call(ProteinsgoTableSeeder::class);
         //$this->call(PublicationsTableSeeder::class);
