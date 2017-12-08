@@ -11,6 +11,11 @@
         min-height: 100%;
         position: relative;
     }
+    .line-title {
+        text-align: right; 
+        font-weight: bold; 
+        width: 20%;
+    }
     /*
      * Content Wrapper - contains the main content
      */
@@ -39,57 +44,58 @@
                 <div class="col-xs-12">
                     <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">Gene 2584 - TATE DNA Transposon</h3>
+                            <h3 class="box-title">Gene {!! $gene->id !!} - {!! $gene->protein->protein_name !!}</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
                             <a href="#" class="btn btn-primary btn-lg active"
                                role="button">Sequence download</a>
                             <h4>Genomic information</h4>
-                            <table class="table table-bordered" cellspacing="0">
+                            <table class="table table-bordered">
                                 <tbody>
                                     <tr>
-                                        <td style="text-align: right; font-weight: bold; width: 20%">LeishDB ID:</td>
-                                        <td>2584</td>
+                                        <td class="line-title">LeishDB ID:</td>
+                                        <td>{!! $gene->id !!}</td>
                                     </tr>
                                     <tr>
-                                        <td style="text-align: right; font-weight: bold; width: 20%">Gene name:</td>
-                                        <td>LBRM_34_0020</td>
+                                        <td class="line-title">Gene name:</td>
+                                        <td>{!! $gene->protein->gene_name !!}</td>
                                     </tr>
                                     <tr>
-                                        <td style="text-align: right; font-weight: bold; width: 20%">Genomic location:</td>
-                                        <td>chr:109 - 6297 </td>
+                                        <td class="line-title">Genomic location:</td>
+                                        <td>chr:{!! $gene->start !!}-{!! $gene->end !!}</td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: right; font-weight: bold; width: 20%;">Size:</td>
-                                        <td> 6188bp </td>
+                                        <td>{!! $gene->size !!}bp</td>
                                     </tr>
                                     <tr>
-                                        <td style="text-align: right; font-weight: bold; width: 20%">Validated by:</td>
+                                        <td class="line-title">Validated by:</td>
                                         <td>
-                                            <i class="fa fa-retweet fa-lg" title="RNA transcript"></i> (RNA transcript - 87 reads) </td>
+                                            <i class="fa fa-retweet fa-lg" title="RNA transcript"></i> 
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
                             <h4>Databases cross-reference</h4>
-                            <table class="table table-bordered" cellspacing="0">
+                            <table class="table table-bordered">
                                 <tbody>
                                     <tr>
-                                        <td style="text-align: right; font-weight: bold; width:  20%">UNIPROT ID</td>
+                                        <td class="line-title">UNIPROT ID</td>
                                         <td>
-                                            <a href="http://www.uniprot.org/uniprot/A4HM37" target="_blank">A4HM37</a>
+                                            <a href="http://www.uniprot.org/uniprot/{!! $gene->protein_id !!}" target="_blank">{!! $gene->protein_id !!}</a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="text-align: right; font-weight: bold; width: 20%">EMBL</td>
+                                        <td class="line-title">EMBL</td>
                                         <td>
-                                            <a target="_blank" href="http://www.ebi.ac.uk/ena/data/view/FR799009">FR799009</a>
+                                            <a href="http://www.ebi.ac.uk/ena/data/view/FR799009" target="_blank">FR799009</a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="text-align: right; font-weight: bold; width: 20%">KEGG</td>
+                                        <td class="line-title">KEGG</td>
                                         <td>
-                                            <a target="_blank" href="http://www.genome.jp/dbget-bin/www_bget?lbz:LBRM_34_0020">lbz:LBRM_34_0020</a>
+                                            <a href="http://www.genome.jp/dbget-bin/www_bget?lbz:LBRM_34_0020" target="_blank">lbz:LBRM_34_0020</a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -98,13 +104,13 @@
                             <table class="table table-bordered" cellspacing="0">
                                 <tbody>
                                     <tr>
-                                        <td style="text-align: right; font-weight: bold; width: 20%">NCBI</td>
+                                        <td class="line-title">NCBI</td>
                                         <td>
                                             <a target="_blank" href="https://www.ncbi.nlm.nih.gov/gene/5414638">5414638</a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="text-align: right; font-weight: bold; width: 20%">TRITRYPDB</td>
+                                        <td class="line-title">TRITRYPDB</td>
                                         <td>
                                             <a target="_blank" href="http://tritrypdb.org/tritrypdb/app/record/gene/LbrM.18.0010">LbrM.18.0010</a>
                                         </td>

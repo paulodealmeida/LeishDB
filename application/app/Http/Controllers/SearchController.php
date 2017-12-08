@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Crossreference;
 use App\Models\Gene;
 use App\Models\Ncrna;
 
@@ -38,9 +39,10 @@ class SearchController extends Controller
      */
     public function show($_searchId)
     {
-        $search = Gene::find($_searchId);
-        if ($search) {
-            return view('search.show', compact('search'));
+        $gene = Gene::with('protein')->find($_searchId);
+        
+        if ($gene) {
+            return view('search.show', compact('gene'));
         } else {
             return redirect()->route('search.index')
                             ->with('err', 'Não encontrado!')
