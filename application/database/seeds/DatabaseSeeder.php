@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(NcrnaTableSeeder::class);
         $this->call(CrossreferenceTableSeeder::class);
         $this->call(ProteinsgoTableSeeder::class);
-        //$this->call(PublicationsTableSeeder::class);
+        $this->call(PublicationsTableSeeder::class);
 
         Model::reguard();
     }
